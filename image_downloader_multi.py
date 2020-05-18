@@ -66,6 +66,7 @@ def main(argv):
         proxy = args.proxy_socks5
 
     if os.path.exists(args.keywords):
+        print(f"File exists: {args.keywords}")
         keywords = utils.gen_keywords_list_from_file(args.keywords)
         keywords = map(lambda x: x.replace("\n",""), keywords)
         # every item that is already in the directory and was requested
