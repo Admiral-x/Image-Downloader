@@ -67,6 +67,7 @@ def main(argv):
 
     if os.path.exists(args.keywords):
         keywords = utils.gen_keywords_list_from_file(args.keywords)
+        keywords = map(lambda x: x.replace("\n",""), keywords)
         print(f"Scraping following file:{args.keywords}, keywords:{keywords}")
     else:
         keywords = args.keywords.split(',')

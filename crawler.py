@@ -282,6 +282,7 @@ def crawl_image_urls(keywords, engine="Google", max_number=10000,
         chrome_path = shutil.which("chromedriver")
         chrome_path = "./bin/chromedriver" if chrome_path is None else chrome_path
         chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
         if "headless" in browser:
             chrome_options.add_argument("headless")
         if proxy is not None and proxy_type is not None:
