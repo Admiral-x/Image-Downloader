@@ -70,7 +70,7 @@ def main(argv):
         keywords = utils.gen_keywords_list_from_file(args.keywords)
         keywords = map(lambda x: x.replace("\n",""), keywords)
         # every item that is already in the directory and was requested
-        existing_keywords = [scraped for scraped in os.listdir(args.keywords) if scraped in keywords]
+        existing_keywords = [scraped for scraped in os.listdir(args.output) if scraped in keywords]
         print(f"Skipping existing keywords: {existing_keywords}")
         # every item that was requested and is not existing already
         keywords = [keyword for keyword in keywords if keyworde not in existing_keywords]
